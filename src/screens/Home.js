@@ -1,11 +1,14 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Tasks from './Tasks';
-import Locations from './Locations';
-import AddTask from './AddTask';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faFileLines, faLocationPin} from '@fortawesome/free-regular-svg-icons';
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Tasks from "./Tasks";
+import Locations from "./Locations";
+import AddTask from "./AddTask";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faFileLines,
+  faLocationPin,
+} from "@fortawesome/free-regular-svg-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,15 +18,16 @@ const Home = () => {
       initialRouteName="Tasks"
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Tab.Screen
         name="Tasks"
         component={Tasks}
         options={{
-          tabBarIcon: ({tintColor}) => (
+          tabBarIcon: ({ tintColor }) => (
             <Image
-              style={{width: 15, height: 20}}
-              source={require('../assets/task.png')}
+              style={{ width: 15, height: 20 }}
+              source={require("../assets/task.png")}
             />
           ),
         }}
@@ -32,10 +36,10 @@ const Home = () => {
         name="Locations"
         component={Locations}
         options={{
-          tabBarIcon: ({tintColor}) => (
+          tabBarIcon: ({ tintColor }) => (
             <Image
-              style={{width: 15, height: 20}}
-              source={require('../assets/pin.png')}
+              style={{ width: 15, height: 20 }}
+              source={require("../assets/pin.png")}
             />
           ),
         }}

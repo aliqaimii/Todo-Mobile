@@ -1,11 +1,11 @@
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SafeAreaFrameContext} from 'react-native-safe-area-context';
-import 'react-native-gesture-handler';
-import Login from '../screens/Login';
-import Home from '../screens/Home';
-import AddTask from '../screens/AddTask';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaFrameContext } from "react-native-safe-area-context";
+import "react-native-gesture-handler";
+import Login from "../screens/Login";
+import Home from "../screens/Home";
+import AddTask from "../screens/AddTask";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,8 @@ const NavigationStack = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="Home">
+        initialRouteName="Home"
+      >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="AddTask" component={AddTask} />

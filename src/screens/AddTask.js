@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,14 +6,14 @@ import {
   StyleSheet,
   Image,
   Alert,
-} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
-import {AddTask, UpdateTask} from '../services/Api';
+} from "react-native";
+import { TextInput } from "react-native-gesture-handler";
+import { AddTask } from "../services/Api";
 
-const AddTasks = ({route, navigation}) => {
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
-  const [dueDate, setDueDate] = useState('');
+const AddTasks = ({ navigation }) => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   const onAddTask = async () => {
     let data = {
@@ -38,7 +38,8 @@ const AddTasks = ({route, navigation}) => {
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backBtn}
-          onPress={() => navigation.goBack()}>
+          onPress={() => navigation.goBack()}
+        >
           <Text style={styles.backTxt}>Back</Text>
         </TouchableOpacity>
         <Text style={styles.heading}>New Task</Text>
@@ -47,14 +48,14 @@ const AddTasks = ({route, navigation}) => {
         <View style={styles.textInput}>
           <Image
             style={styles.inputIcon}
-            source={require('../assets/icon1.png')}
+            source={require("../assets/icon1.png")}
           />
           <TextInput onChangeText={setTitle} style={styles.input} />
         </View>
         <View style={styles.textInput}>
           <Image
             style={styles.inputIcon}
-            source={require('../assets/icon2.png')}
+            source={require("../assets/icon2.png")}
           />
           <TextInput
             onChangeText={setDesc}
@@ -66,7 +67,7 @@ const AddTasks = ({route, navigation}) => {
         <View style={styles.textInput}>
           <Image
             style={styles.inputIcon}
-            source={require('../assets/icon3.png')}
+            source={require("../assets/icon3.png")}
           />
           <TextInput onChangeText={setDueDate} style={styles.input} />
         </View>
@@ -81,35 +82,35 @@ const AddTasks = ({route, navigation}) => {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 20,
   },
   heading: {
     flex: 1,
-    textAlign: 'center',
-    fontWeight: 'bold',
+    textAlign: "center",
+    fontWeight: "bold",
     fontSize: 25,
   },
   backTxt: {
     fontSize: 15,
   },
   backBtn: {
-    position: 'absolute',
+    position: "absolute",
     zIndex: 1,
   },
   body: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 60,
   },
   header: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   textInput: {
-    flexDirection: 'row',
+    flexDirection: "row",
     paddingVertical: 20,
     paddingHorizontal: 10,
-    borderBottomColor: 'gray',
+    borderBottomColor: "gray",
     borderBottomWidth: 0.5,
     marginBottom: 20,
   },
@@ -122,15 +123,15 @@ const styles = StyleSheet.create({
     height: 20,
   },
   btn: {
-    backgroundColor: 'black',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 25,
     padding: 12,
     marginTop: 30,
   },
-  btnText: {color: 'white'},
+  btnText: { color: "white" },
 });
 
 export default AddTasks;
