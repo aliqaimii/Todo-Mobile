@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
-import {Text, TextInput, View, StyleSheet, Alert} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import React, { useState } from "react";
+import { Text, TextInput, View, StyleSheet, Alert } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [showPass, setShowPass] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const onLogin = () => {
     if (email && password) {
       console.log(email, password);
-      if (email === 'admin' && password === 'admin1') {
+      if (email === "admin" && password === "admin1") {
         // localStorage.setItem('login', 'true');
-        navigation.navigate('Home');
-        Alert.alert('Login successfully');
+        navigation.navigate("Home");
+        Alert.alert("Login successfully");
       } else {
-        Alert.alert('Incorrect Email address or Password.');
+        Alert.alert("Incorrect Email address or Password.");
       }
     } else {
-      Alert.alert('Please enter Email address or Password.');
+      Alert.alert("Please enter Email address or Password.");
     }
   };
 
@@ -41,7 +41,7 @@ const Login = ({navigation}) => {
           />
           <TouchableOpacity onPress={() => setShowPass(!showPass)}>
             <Text style={styles.inputPassTxt}>
-              {showPass ? 'Hide' : 'Show'}
+              {showPass ? "Hide" : "Show"}
             </Text>
           </TouchableOpacity>
         </View>
@@ -57,39 +57,39 @@ const Login = ({navigation}) => {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
   },
   loginContainer: {
-    width: '88%',
+    width: "88%",
   },
   loginTxt: {
     fontSize: 25,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 60,
-    textAlign: 'center',
+    textAlign: "center",
   },
   input: {
-    backgroundColor: '#E8E8E8',
-    width: '100%',
+    backgroundColor: "#E8E8E8",
+    width: "100%",
     padding: 12,
     marginBottom: 10,
     borderRadius: 7,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
-  inputPass: {flex: 1},
-  inputPassTxt: {fontWeight: '600'},
+  inputPass: { flex: 1 },
+  inputPassTxt: { fontWeight: "600" },
   btn: {
-    backgroundColor: 'black',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 25,
     padding: 12,
     marginTop: 30,
   },
-  btnText: {color: 'white'},
+  btnText: { color: "white" },
 });
 
 export default Login;
