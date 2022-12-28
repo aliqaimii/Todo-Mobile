@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const Get = (token, url) => {
   return new Promise(function (resolve, reject) {
     axios
       .get(url, {
-        headers: {Authorization: `Bearer ${token}`},
+        headers: { Authorization: `Bearer ${token}` },
       })
       .then(function (response) {
         resolve(response);
@@ -15,7 +15,7 @@ export const Get = (token, url) => {
   });
 };
 
-export const Get2 = url => {
+export const Get2 = (url) => {
   return new Promise(function (resolve, reject) {
     axios
       .get(url)
@@ -34,7 +34,7 @@ export const Post = (token, url, body, params) => {
       .post(url, body, {
         params: params,
         headers: {
-          'Content-Type': 'application/form-data',
+          "Content-Type": "application/form-data",
           Authorization: `Bearer ${token}`,
         },
       })

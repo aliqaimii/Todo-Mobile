@@ -6,22 +6,14 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React from "react";
+import { SafeAreaView } from "react-native";
 
-import NavigationStack from './src/navigation/NavigationStack';
+import NavigationStack from "./src/navigation/NavigationStack";
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <NavigationStack />
     </SafeAreaView>
   );
