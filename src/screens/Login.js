@@ -9,7 +9,6 @@ const Login = ({ navigation }) => {
 
   const onLogin = () => {
     if (email && password) {
-      console.log(email, password);
       if (email === "admin" && password === "admin1") {
         // localStorage.setItem('login', 'true');
         navigation.navigate("Home");

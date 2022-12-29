@@ -23,12 +23,9 @@ const Tasks = ({ navigation }) => {
   const getTasks = async () => {
     const res = await GetTasks();
 
-    console.log("res", res);
-
     if (res?.status === 200) {
       const tasks = await getFormattedTasks(res?.data?.tasks);
 
-      console.log("tasks", tasks);
       setCompletedTasks(tasks?.completed.reverse());
       setIncompleteTasks(tasks?.incomplete.reverse());
     }
