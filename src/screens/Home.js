@@ -1,14 +1,8 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Tasks from "./Tasks";
 import Locations from "./Locations";
-import AddTask from "./AddTask";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faFileLines,
-  faLocationPin,
-} from "@fortawesome/free-regular-svg-icons";
 
 const Tab = createBottomTabNavigator();
 

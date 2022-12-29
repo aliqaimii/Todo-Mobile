@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, FlatList } from "react-native";
-import {
-  AddCheckin,
-  DeleteCheckin,
-  GetCheckins,
-  GetLocationDetail,
-  UpdateCheckin,
-} from "../services/Api";
+import { GetCheckins } from "../services/Api";
 
 const Locations = () => {
   const [prevLocations, setPrevLocations] = useState([]);
-  const [currentLocation, setCurrentLocation] = useState({});
 
   useEffect(() => {
     getCheckins();
