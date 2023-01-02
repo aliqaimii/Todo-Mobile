@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   Animated,
+  StyleSheet,
 } from "react-native";
 import { GetTasks } from "../services/Api";
 import Swipeable from "react-native-gesture-handler/Swipeable";
@@ -96,49 +97,42 @@ const Tasks = ({ navigation }) => {
       renderRightActions={renderRightActions}
       renderLeftActions={renderLeftActions}
     >
-      <View style={{ margin: 5, flexDirection: "row", padding: 7 }}>
+      <View style={styles.item}>
         <Image
-          style={{ width: 20, height: 20 }}
+          style={styles.itemImg}
           source={require("../assets/Unchecked.png")}
         />
-        <View style={{ marginLeft: 12 }}>
-          <Text style={{ fontSize: 17, marginBottom: 5 }}> {item?.title}</Text>
+        <View style={styles.itemInner}>
+          <Text style={styles.itemTitleText}> {item?.title}</Text>
 
-          <Text style={{ fontSize: 14, color: "gray" }}> {item?.due_at}</Text>
+          <Text style={styles.itemDateText}> {item?.due_at}</Text>
         </View>
       </View>
     </Swipeable>
   );
 
   const renderItemCompleted = ({ item }) => (
-    <View style={{ margin: 5, flexDirection: "row", padding: 7 }}>
-      <Image
-        style={{ width: 20, height: 20 }}
-        source={require("../assets/checked.png")}
-      />
-      <View style={{ marginLeft: 12 }}>
-        <Text style={{ fontSize: 17, marginBottom: 5 }}> {item?.title}</Text>
-        <Text style={{ fontSize: 14, color: "gray" }}> {item?.due_at}</Text>
+    <View style={styles.item}>
+      <Image style={styles.itemImg} source={require("../assets/checked.png")} />
+      <View style={styles.itemInner}>
+        <Text style={styles.itemTitleText}> {item?.title}</Text>
+        <Text style={styles.itemDateText}> {item?.due_at}</Text>
       </View>
     </View>
   );
 
   return (
-    <View style={{ height: "100%", padding: 20, backgroundColor: "white" }}>
+    <View style={styles.main}>
       <TouchableOpacity onPress={onAddTask}>
-        <Text style={{ fontWeight: "bold", fontSize: 18 }}>+ Add Task</Text>
+        <Text style={styles.addBtnText}>+ Add Task</Text>
       </TouchableOpacity>
-      <Text style={{ fontWeight: "bold", marginVertical: 10, fontSize: 18 }}>
-        Incomplete
-      </Text>
+      <Text style={styles.incompText}>Incomplete</Text>
       <FlatList
         data={incompleteTasks}
         renderItem={renderItemIncomplete}
         keyExtractor={(item) => item.id}
       />
-      <Text style={{ fontWeight: "bold", marginVertical: 10, fontSize: 18 }}>
-        completed
-      </Text>
+      <Text style={styles.compText}>completed</Text>
       <FlatList
         data={completedTasks}
         renderItem={renderItemCompleted}
@@ -147,5 +141,47 @@ const Tasks = ({ navigation }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  main: {
+    height: "100%",
+    padding: 20,
+    backgroundColor: "white",
+  },
+  addBtnText: {
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  incompText: {
+    fontWeight: "bold",
+    marginVertical: 10,
+    fontSize: 18,
+  },
+  compText: {
+    fontWeight: "bold",
+    marginVertical: 10,
+    fontSize: 18,
+  },
+  item: {
+    margin: 5,
+    flexDirection: "row",
+    padding: 7,
+  },
+  itemImg: {
+    width: 20,
+    height: 20,
+  },
+  itemInner: {
+    marginLeft: 12,
+  },
+  itemTitleText: {
+    fontSize: 17,
+    marginBottom: 5,
+  },
+  itemDateText: {
+    fontSize: 14,
+    color: "gray",
+  },
+});
 
 export default Tasks;
