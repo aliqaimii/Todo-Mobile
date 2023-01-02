@@ -1,15 +1,17 @@
 import { Delete, Get, Get2, Post, Put } from "./https";
 
+const BASE_URL = "https://todo-test.digitaltolk.com";
+
 const USER_TOKEN = "Zl49StyUu9721TFoRHfDqGmEVikCKNhJayGUgDvK";
 
 export const GetTasks = () => {
-  let url = "https://todo-test.digitaltolk.com/api/tasks";
+  let url = `${BASE_URL}/api/tasks`;
 
   return Get(USER_TOKEN, url);
 };
 
 export const GetCheckins = () => {
-  let url = "https://todo-test.digitaltolk.com/api/checkins";
+  let url = `${BASE_URL}/api/checkins`;
 
   return Get(USER_TOKEN, url);
 };
@@ -24,7 +26,7 @@ export const GetLocationDetail = (lat, long) => {
 };
 
 export const AddCheckin = (data) => {
-  let url = "https://todo-test.digitaltolk.com/api/checkins";
+  let url = `${BASE_URL}/api/checkins`;
 
   let formdata = new FormData();
 
@@ -36,7 +38,7 @@ export const AddCheckin = (data) => {
 };
 
 export const AddTask = (data) => {
-  let url = "https://todo-test.digitaltolk.com/api/tasks";
+  let url = `${BASE_URL}/api/tasks`;
 
   let formdata = new FormData();
 
@@ -49,13 +51,13 @@ export const AddTask = (data) => {
 };
 
 export const DeleteTask = (id) => {
-  let url = `https://todo-test.digitaltolk.com/api/tasks/ ${id}`;
+  let url = `${BASE_URL}/api/tasks/ ${id}`;
 
   return Delete(USER_TOKEN, url);
 };
 
 export const UpdateTask = (id, data) => {
-  let url = `https://todo-test.digitaltolk.com/api/tasks/ ${id}`;
+  let url = `${BASE_URL}/api/tasks/ ${id}`;
 
   let formdata = new FormData();
 
@@ -68,13 +70,13 @@ export const UpdateTask = (id, data) => {
 };
 
 export const DeleteCheckin = (id) => {
-  let url = `https://todo-test.digitaltolk.com/api/checkins/ ${id}`;
+  let url = `${BASE_URL}/api/checkins/ ${id}`;
 
   return Delete(USER_TOKEN, url);
 };
 
 export const UpdateCheckin = (id, data) => {
-  let url = `https://todo-test.digitaltolk.com/api/checkins/ ${id}`;
+  let url = `${BASE_URL}/api/checkins/ ${id}`;
 
   let formdata = new FormData();
 
