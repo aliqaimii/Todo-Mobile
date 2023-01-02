@@ -35,7 +35,7 @@ const Tasks = ({ navigation }) => {
     let incomplete = [];
     let completed = [];
 
-    data.map((item, ind) => {
+    data.map((item) => {
       if (item?.status === "completed") {
         completed.push(item);
       } else if (item?.status === "incomplete") {
@@ -50,7 +50,7 @@ const Tasks = ({ navigation }) => {
     navigation.navigate("AddTask");
   };
 
-  const onEdit = async (item) => {
+  const onEdit = async () => {
     navigation.navigate("AddTask");
   };
 

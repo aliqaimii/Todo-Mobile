@@ -10,7 +10,6 @@ const Login = ({ navigation }) => {
   const onLogin = () => {
     if (email && password) {
       if (email === "admin" && password === "admin1") {
-        // localStorage.setItem('login', 'true');
         navigation.navigate("Home");
         Alert.alert("Login successfully");
       } else {
