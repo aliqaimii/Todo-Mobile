@@ -18,7 +18,7 @@ const Home = () => {
         name="Tasks"
         component={Tasks}
         options={{
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({}) => (
             <Image
               style={{ width: 15, height: 20 }}
               source={require("../assets/task.png")}
@@ -30,7 +30,7 @@ const Home = () => {
         name="Locations"
         component={Locations}
         options={{
-          tabBarIcon: ({ tintColor }) => (
+          tabBarIcon: ({}) => (
             <Image
               style={{ width: 15, height: 20 }}
               source={require("../assets/pin.png")}
