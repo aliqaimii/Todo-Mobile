@@ -62,13 +62,9 @@ const Tasks = ({ navigation }) => {
     });
     return (
       <Animated.View
-        style={{
-          backgroundColor: "#a0d911",
-          padding: 20,
-          transform: [{ translateX: trans }],
-        }}
+        style={[styles.leftAction, { transform: [{ translateX: trans }] }]}
       >
-        <FontAwesomeIcon style={{ color: "white" }} icon={faPenToSquare} />
+        <FontAwesomeIcon style={styles.icon} icon={faPenToSquare} />
       </Animated.View>
     );
   };
@@ -80,13 +76,9 @@ const Tasks = ({ navigation }) => {
     return (
       <TouchableOpacity onPress={onEdit}>
         <Animated.View
-          style={{
-            backgroundColor: "#ff4d4f",
-            padding: 20,
-            transform: [{ translateX: trans }],
-          }}
+          style={[styles.rightAction, { transform: [{ translateX: trans }] }]}
         >
-          <FontAwesomeIcon style={{ color: "white" }} icon={faTrashCan} />
+          <FontAwesomeIcon style={styles.icon} icon={faTrashCan} />
         </Animated.View>
       </TouchableOpacity>
     );
@@ -152,6 +144,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
   },
+  icon: {
+    color: "white",
+  },
   incompText: {
     fontWeight: "bold",
     marginVertical: 10,
@@ -181,6 +176,14 @@ const styles = StyleSheet.create({
   itemDateText: {
     fontSize: 14,
     color: "gray",
+  },
+  rightAction: {
+    backgroundColor: "#ff4d4f",
+    padding: 20,
+  },
+  leftAction: {
+    backgroundColor: "#a0d911",
+    padding: 20,
   },
 });
 
