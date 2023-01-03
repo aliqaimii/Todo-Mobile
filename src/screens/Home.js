@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Tasks from "./Tasks";
 import Locations from "./Locations";
@@ -19,10 +19,7 @@ const Home = () => {
         component={Tasks}
         options={{
           tabBarIcon: ({}) => (
-            <Image
-              style={{ width: 15, height: 20 }}
-              source={require("../assets/task.png")}
-            />
+            <Image style={styles.img} source={require("../assets/task.png")} />
           ),
         }}
       />
@@ -31,15 +28,19 @@ const Home = () => {
         component={Locations}
         options={{
           tabBarIcon: ({}) => (
-            <Image
-              style={{ width: 15, height: 20 }}
-              source={require("../assets/pin.png")}
-            />
+            <Image style={styles.img} source={require("../assets/pin.png")} />
           ),
         }}
       />
     </Tab.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  img: {
+    width: 15,
+    height: 20,
+  },
+});
 
 export default Home;
