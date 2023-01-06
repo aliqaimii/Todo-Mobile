@@ -16,7 +16,7 @@ const Login = ({ navigation }) => {
         Alert.alert("Incorrect Email address or Password.");
       }
     } else {
-      Alert.alert("Please enter Email address or Password.");
+      Alert.alert("Please enter Email address and Password.");
     }
   };
 
