@@ -9,14 +9,13 @@ import AddTask from "../screens/AddTask";
 const Stack = createNativeStackNavigator();
 
 const NavigationStack = () => {
+  const screenOptions = {
+    headerShown: false,
+  };
+
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-        initialRouteName="Home"
-      >
+      <Stack.Navigator screenOptions={screenOptions} initialRouteName="Home">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="AddTask" component={AddTask} />
