@@ -5,6 +5,8 @@ import { GetCheckins } from "../services/Api";
 const Locations = () => {
   const [prevLocations, setPrevLocations] = useState([]);
 
+  const locationIcon = require("../assets/locationPin.png");
+
   useEffect(() => {
     getCheckins();
   }, []);
@@ -18,10 +20,7 @@ const Locations = () => {
 
   const preLoca = ({ item }) => (
     <View style={styles.item}>
-      <Image
-        style={styles.itemImg}
-        source={require("../assets/locationPin.png")}
-      />
+      <Image style={styles.itemImg} source={locationIcon} />
       <View style={styles.itemInner}>
         <Text style={styles.addressText}> {item?.address}</Text>
 
