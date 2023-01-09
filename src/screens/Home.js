@@ -7,30 +7,29 @@ import Locations from "./Locations";
 const Tab = createBottomTabNavigator();
 
 const Home = () => {
+  const screenOptions = {
+    headerShown: false,
+  };
+
+  const taskOptions = {
+    tabBarIcon: ({}) => (
+      <Image style={styles.img} source={require("../assets/task.png")} />
+    ),
+  };
+
+  const locationOptions = {
+    tabBarIcon: ({}) => (
+      <Image style={styles.img} source={require("../assets/pin.png")} />
+    ),
+  };
+
   return (
-    <Tab.Navigator
-      initialRouteName="Tasks"
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Tab.Screen
-        name="Tasks"
-        component={Tasks}
-        options={{
-          tabBarIcon: ({}) => (
-            <Image style={styles.img} source={require("../assets/task.png")} />
-          ),
-        }}
-      />
+    <Tab.Navigator initialRouteName="Tasks" screenOptions={screenOptions}>
+      <Tab.Screen name="Tasks" component={Tasks} options={taskOptions} />
       <Tab.Screen
         name="Locations"
         component={Locations}
-        options={{
-          tabBarIcon: ({}) => (
-            <Image style={styles.img} source={require("../assets/pin.png")} />
-          ),
-        }}
+        options={locationOptions}
       />
     </Tab.Navigator>
   );
