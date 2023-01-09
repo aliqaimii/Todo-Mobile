@@ -15,6 +15,10 @@ const AddTasks = ({ navigation }) => {
   const [desc, setDesc] = useState("");
   const [dueDate, setDueDate] = useState("");
 
+  const titleIcon = require("../assets/icon1.png");
+  const descIcon = require("../assets/icon2.png");
+  const dateIcon = require("../assets/icon3.png");
+
   const onAddTask = async () => {
     let data = {
       title: title,
@@ -46,17 +50,11 @@ const AddTasks = ({ navigation }) => {
       </View>
       <View style={styles.body}>
         <View style={styles.textInput}>
-          <Image
-            style={styles.inputIcon}
-            source={require("../assets/icon1.png")}
-          />
+          <Image style={styles.inputIcon} source={titleIcon} />
           <TextInput onChangeText={setTitle} style={styles.input} />
         </View>
         <View style={styles.textInput}>
-          <Image
-            style={styles.inputIcon}
-            source={require("../assets/icon2.png")}
-          />
+          <Image style={styles.inputIcon} source={descIcon} />
           <TextInput
             onChangeText={setDesc}
             style={styles.input}
@@ -65,10 +63,7 @@ const AddTasks = ({ navigation }) => {
           />
         </View>
         <View style={styles.textInput}>
-          <Image
-            style={styles.inputIcon}
-            source={require("../assets/icon3.png")}
-          />
+          <Image style={styles.inputIcon} source={dateIcon} />
           <TextInput onChangeText={setDueDate} style={styles.input} />
         </View>
         <TouchableOpacity onPress={onAddTask} style={styles.btn}>
