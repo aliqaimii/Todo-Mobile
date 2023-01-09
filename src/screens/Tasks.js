@@ -17,6 +17,9 @@ const Tasks = ({ navigation }) => {
   const [incompleteTasks, setIncompleteTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
 
+  const uncheckedIcon = require("../assets/Unchecked.png");
+  const checkedIcon = require("../assets/checked.png");
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -90,10 +93,7 @@ const Tasks = ({ navigation }) => {
       renderLeftActions={renderLeftActions}
     >
       <View style={styles.item}>
-        <Image
-          style={styles.itemImg}
-          source={require("../assets/Unchecked.png")}
-        />
+        <Image style={styles.itemImg} source={uncheckedIcon} />
         <View style={styles.itemInner}>
           <Text style={styles.itemTitleText}> {item?.title}</Text>
 
@@ -105,7 +105,7 @@ const Tasks = ({ navigation }) => {
 
   const renderItemCompleted = ({ item }) => (
     <View style={styles.item}>
-      <Image style={styles.itemImg} source={require("../assets/checked.png")} />
+      <Image style={styles.itemImg} source={checkedIcon} />
       <View style={styles.itemInner}>
         <Text style={styles.itemTitleText}> {item?.title}</Text>
         <Text style={styles.itemDateText}> {item?.due_at}</Text>
