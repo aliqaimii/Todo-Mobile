@@ -54,7 +54,7 @@ const Tasks = ({ navigation }) => {
     navigation.navigate("AddTask");
   };
 
-  const onEdit = async () => {
+  const onEdit = () => {
     navigation.navigate("AddTask");
   };
 
