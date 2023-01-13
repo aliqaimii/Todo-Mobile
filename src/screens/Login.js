@@ -20,6 +20,10 @@ const Login = ({ navigation }) => {
     }
   };
 
+  const onVisiblityPress = () => {
+    setShowPass(!showPass);
+  };
+
   return (
     <View style={styles.main}>
       <View style={styles.loginContainer}>
@@ -37,7 +41,7 @@ const Login = ({ navigation }) => {
             secureTextEntry={!showPass}
             onChangeText={setPassword}
           />
-          <TouchableOpacity onPress={() => setShowPass(!showPass)}>
+          <TouchableOpacity onPress={onVisiblityPress}>
             <Text style={styles.inputPassTxt}>
               {showPass ? "Hide" : "Show"}
             </Text>
