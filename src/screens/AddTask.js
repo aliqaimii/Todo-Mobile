@@ -37,13 +37,13 @@ const AddTasks = ({ navigation }) => {
     navigation.goBack();
   };
 
+  const onBackPress = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.main}>
       <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.backBtn}
-          onPress={() => navigation.goBack()}
-        >
+        <TouchableOpacity style={styles.backBtn} onPress={onBackPress}>
           <Text style={styles.backTxt}>Back</Text>
         </TouchableOpacity>
         <Text style={styles.heading}>New Task</Text>
