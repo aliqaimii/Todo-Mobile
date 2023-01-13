@@ -19,8 +19,7 @@ export const GetCheckins = () => {
 export const GetLocationDetail = (lat, long) => {
   let url = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
-  url =
-    url + "?latitude=" + lat + "&longitude=" + long + "&localityLanguage=en";
+  url = url + `?latitude=${lat}&longitude=${long}&localityLanguage=en`;
 
   return Get2(url);
 };
