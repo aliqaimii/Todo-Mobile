@@ -5,6 +5,8 @@ import { GetCheckins } from "../services/Api";
 const Locations = () => {
   const [prevLocations, setPrevLocations] = useState([]);
 
+  let latLong = item?.latitude + ", " + item?.latitude;
+
   const locationIcon = require("../assets/locationPin.png");
 
   useEffect(() => {
@@ -24,9 +26,7 @@ const Locations = () => {
       <View style={styles.itemInner}>
         <Text style={styles.addressText}> {item?.address}</Text>
 
-        <Text style={styles.latLongText}>
-          {item?.latitude + ", " + item?.latitude}
-        </Text>
+        <Text style={styles.latLongText}>{latLong}</Text>
       </View>
     </View>
   );
