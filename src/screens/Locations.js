@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, FlatList, StyleSheet } from "react-native";
+
 import { GetCheckins } from "../services/Api";
 
 const Locations = () => {

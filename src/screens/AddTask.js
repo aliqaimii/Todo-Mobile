@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   View,
   Text,
@@ -6,8 +7,9 @@ import {
   StyleSheet,
   Image,
   Alert,
+  TextInput,
 } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+
 import { AddTask } from "../services/Api";
 
 const AddTasks = ({ navigation }) => {
