@@ -8,10 +8,12 @@ import {
   Animated,
   StyleSheet,
 } from "react-native";
-import { GetTasks } from "../services/Api";
+
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
+
+import { GetTasks } from "../services/Api";
 
 const Tasks = ({ navigation }) => {
   const [incompleteTasks, setIncompleteTasks] = useState([]);
@@ -96,7 +98,6 @@ const Tasks = ({ navigation }) => {
         <Image style={styles.itemImg} source={uncheckedIcon} />
         <View style={styles.itemInner}>
           <Text style={styles.itemTitleText}> {item?.title}</Text>
-
           <Text style={styles.itemDateText}> {item?.due_at}</Text>
         </View>
       </View>

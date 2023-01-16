@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import Tasks from "./Tasks";
 import Locations from "./Locations";
 
