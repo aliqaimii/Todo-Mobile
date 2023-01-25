@@ -61,27 +61,30 @@ const Tasks = ({ navigation }) => {
   };
 
   const renderLeftActions = (progress, dragX) => {
-    const trans = dragX.interpolate({
+    const translate = dragX.interpolate({
       inputRange: [0, 50, 100, 101],
       outputRange: [-20, 0, 0, 1],
     });
     return (
       <Animated.View
-        style={[styles.leftAction, { transform: [{ translateX: trans }] }]}
+        style={[styles.leftAction, { transform: [{ translateX: translate }] }]}
       >
         <FontAwesomeIcon style={styles.icon} icon={faPenToSquare} />
       </Animated.View>
     );
   };
   const renderRightActions = (progress, dragX) => {
-    const trans = dragX.interpolate({
+    const translate = dragX.interpolate({
       inputRange: [0, 50, 100, 101],
       outputRange: [-20, 0, 0, 1],
     });
     return (
       <TouchableOpacity onPress={onEdit}>
         <Animated.View
-          style={[styles.rightAction, { transform: [{ translateX: trans }] }]}
+          style={[
+            styles.rightAction,
+            { transform: [{ translateX: translate }] },
+          ]}
         >
           <FontAwesomeIcon style={styles.icon} icon={faTrashCan} />
         </Animated.View>
