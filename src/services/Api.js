@@ -1,6 +1,5 @@
+import { BASE_URL } from "../common/common";
 import { Delete, Get, Get2, Post, Put } from "./https";
-
-const BASE_URL = "https://todo-test.digitaltolk.com";
 
 const USER_TOKEN = "Zl49StyUu9721TFoRHfDqGmEVikCKNhJayGUgDvK";
 
