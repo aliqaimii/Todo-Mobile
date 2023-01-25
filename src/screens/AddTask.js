@@ -32,8 +32,6 @@ const AddTasks = ({ navigation }) => {
 
     if (res?.data?.code === 201) {
       Alert.alert(res?.data?.message);
-    } else {
-      Alert.alert(res?.data?.message);
     }
 
     navigation.goBack();
