@@ -28,7 +28,7 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.main}>
       <View style={styles.loginContainer}>
-        <Text style={styles.loginTxt}>Log In</Text>
+        <Text style={styles.loginTxt}>Log in</Text>
         <TextInput
           onChangeText={setEmail}
           placeholder="Email"
